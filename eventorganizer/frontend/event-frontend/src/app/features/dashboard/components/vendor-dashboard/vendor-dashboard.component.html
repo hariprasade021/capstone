@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-12">
+    <app-vendor-header></app-vendor-header>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 sidebar vh-100 shadow-lg bg-black text-white">
+      <div class="position-sticky">
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item mb-3">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="addVendor">
+              <i class="bi bi-plus-circle me-2 fs-5"></i>
+              <span>Create Vendor Profile</span>
+            </a>
+          </li>
+
+
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="viewEventRequests">
+              <i class="bi bi-calendar me-2 fs-5"></i>
+              <span>View Event Requests</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="viewEvents">
+              <i class="bi bi-shop me-2 fs-5"></i>
+              <span>View Accepted Events </span>
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-4 main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="container-fluid">
+    <app-dashboard-footer></app-dashboard-footer>
+  </div>
+</div>

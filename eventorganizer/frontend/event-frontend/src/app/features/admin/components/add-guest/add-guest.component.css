@@ -1,0 +1,17 @@
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-header {
+  border-bottom: 0;
+}
+
+.card-body {
+  padding: 20px 30px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}

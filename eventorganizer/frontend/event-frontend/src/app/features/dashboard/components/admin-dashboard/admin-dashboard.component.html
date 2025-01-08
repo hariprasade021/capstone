@@ -1,0 +1,85 @@
+<div class="row">
+  <div class="col-12">
+    <app-dashboard-header></app-dashboard-header>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-3 col-lg-2 sidebar vh-100 shadow-lg bg-black text-white">
+      <div class="position-sticky">
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item mb-3">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="addEvent">
+              <i class="bi bi-plus-circle me-2 fs-5"></i>
+              <span>Add Event</span>
+            </a>
+          </li>
+
+          <!-- <li class="nav-item mb-3">
+            <a class="nav-link text-white d-flex align-items-center" href="searchEvents">
+              <i class="bi bi-search me-2 fs-5"></i>
+              <span>Search Events</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="budget">
+              <i class="bi bi-wallet me-2 fs-5"></i>
+              <span>Budget</span>
+            </a>
+          </li> -->
+
+
+
+          <!-- <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="viewtask">
+              <i class="bi bi-eye me-2 fs-5"></i>
+              <span>View Task</span>
+            </a>
+          </li> -->
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="viewAllEvent">
+              <i class="bi bi-calendar me-2 fs-5"></i>
+              <span>View All Events</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="viewAllVendors">
+              <i class="bi bi-shop me-2 fs-5"></i>
+              <span>View All Vendors</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="viewAllGuests">
+              <i class="bi bi-person me-2 fs-5"></i>
+              <span>View All Guests</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link text-white d-flex align-items-center" routerLink="addGuest">
+              <i class="bi bi-plus-circle me-2 fs-5"></i>
+              <span>Add Guests</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-4 main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="container-fluid">
+    <app-dashboard-footer></app-dashboard-footer>
+  </div>
+</div>

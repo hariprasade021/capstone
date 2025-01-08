@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <h2>Task List</h2>
+
+  <!-- User Input for Event ID -->
+  <div class="mb-3">
+    <label for="eventIdInput" class="form-label">Enter Event ID</label>
+    <input
+      type="number"
+      id="eventIdInput"
+      class="form-control"
+      [(ngModel)]="eventId"
+      placeholder="Enter Event ID"
+    />
+    <button class="btn btn-primary mt-2" (click)="onEventIdSubmit()">Fetch Tasks</button>
+  </div>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="loading" class="text-center">
+    <p>Loading tasks...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+
+  <!-- Task Cards -->
+  <div class="row" *ngIf="!loading && tasks.length">
+    <div class="col-md-4 mb-4" *ngFor="let task of tasks">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ task.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ task.status | titlecase }}</h6>
+          <p class="card-text">
+            <strong>Event ID:</strong> {{ task.eventId }}<br />
+            <strong>Description:</strong> {{ task.description }}<br />
+            <strong>Deadline:</strong> {{ task.deadline | date: 'shortDate' }}<br />
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-primary btn-sm" (click)="viewTaskDetails(task.id!)">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No Tasks Found -->
+  <div *ngIf="!loading && tasks.length === 0 && !error" class="text-center">
+    <p>No tasks found for this event.</p>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+/* Footer Section Styling */
+.footer {
+  padding: 40px 0;
+}
+
+/* Footer Section Titles */
+.footer h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Footer Paragraphs */
+.footer p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Footer Links Styling */
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: inherit; /* Inherit the white text color from global styles */
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: #007bff; /* Blue color on hover, defined in global styles */
+}
+
+/* Social Links Styling */
+.social-links {
+  padding-left: 0;
+}
+
+.social-links li {
+  margin-bottom: 10px;
+}
+
+.social-links i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Footer Bottom Section */
+.footer .text-center {
+  border-top: 1px solid #444;
+  padding-top: 15px;
+  font-size: 0.875rem;
+}

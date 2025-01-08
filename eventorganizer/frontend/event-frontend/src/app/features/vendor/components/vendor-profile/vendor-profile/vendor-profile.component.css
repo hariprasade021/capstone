@@ -1,0 +1,22 @@
+.vendor-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.vendor-details div {
+  margin-bottom: 10px;
+}
+
+.vendor-details label {
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}

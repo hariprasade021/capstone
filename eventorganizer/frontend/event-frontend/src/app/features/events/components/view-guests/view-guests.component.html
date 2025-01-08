@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h2>Guest List</h2>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="loading" class="text-center">
+      <p>Loading guests...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+  </div>
+
+  <!-- Guest Cards -->
+  <div class="row" *ngIf="!loading && guests.length">
+      <div class="col-md-4 mb-4" *ngFor="let guest of guests">
+          <div class="card h-100">
+              <div class="card-body">
+                  <h5 class="card-title">{{ guest.name }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ guest.email }}</h6>
+                  <p class="card-text">
+                      <strong>Diet:</strong> {{ guest.diet }}<br>
+                      <strong>RSVP Status:</strong> {{ guest.rsvpStatus }}
+                  </p>
+              </div>
+              <!-- <div class="card-footer">
+                  <button class="btn btn-primary btn-sm">View Details</button>
+              </div> -->
+          </div>
+      </div>
+  </div>
+
+  <!-- No Guests Found -->
+  <div *ngIf="!loading && guests.length === 0" class="text-center">
+      <p>No guests found.</p>
+  </div>
+</div>

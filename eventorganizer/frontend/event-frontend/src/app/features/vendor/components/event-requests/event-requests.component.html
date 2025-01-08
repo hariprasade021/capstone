@@ -1,0 +1,23 @@
+<div *ngFor="let request of eventRequests" class="card">
+  <div class="card-body">
+    <!-- Display event details if available -->
+    <ng-container *ngIf="eventDetails[request.eventId] as event">
+      <h5 class="card-title">Event Name: {{ event.title }}</h5>
+      <p class="card-text">Status: {{ event.status }}</p>
+      <p class="card-text">Start Date: {{ event.startDate }}</p>
+      <p class="card-text">Location: {{ event.location }}</p>
+    </ng-container>
+    <ng-container *ngIf="!eventDetails[request.eventId]">
+      <p>Loading event details...</p>
+    </ng-container>
+
+    <!-- Action buttons -->
+    <div *ngIf="request.status === 'PENDING'">
+      <button class="btn btn-success" (click)="acceptRequest(request.id)">Accept</button>
+      <button class="btn btn-danger" (click)="rejectRequest(request.id)">Reject</button>
+    </div>
+    <p *ngIf="request.status !== 'PENDING'" class="card-text">
+      Request has been {{ request.status.toLowerCase() }}.
+    </p>
+  </div>
+</div>

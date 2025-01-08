@@ -1,0 +1,107 @@
+/* main.component.css */
+
+/* Main Content Section with black background */
+.main-content {
+    background-color: #000000; /* Black background */
+    padding: 60px 0;
+    font-family: 'San Francisco', sans-serif;
+    color: white; /* White text */
+  }
+  
+  /* Heading Style */
+  .main-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white; /* White text */
+    margin-bottom: 20px;
+  }
+  
+  /* Paragraph Style */
+  .main-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: white; /* White text */
+  }
+  
+  /* Feature Boxes */
+  .feature-box {
+    background-color: #333; /* Dark gray background for feature boxes */
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-box:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+  }
+  
+  .feature-box h3 {
+    font-size: 1.5rem;
+    color: white; /* White text for feature box heading */
+    margin-top: 20px;
+  }
+  
+  .feature-box p {
+    font-size: 1rem;
+    color: #ccc; /* Lighter gray text for description */
+    margin-top: 10px;
+  }
+  
+  /* Feature Box Icons */
+  .feature-icon {
+    font-size: 3rem;
+    color: #007bff; /* Blue color for the icons */
+    transition: color 0.3s ease;
+  }
+  
+  .feature-box:hover .feature-icon {
+    color: #0056b3; /* Icon color change on hover */
+  }
+  
+  /* Call to Action Button */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    color: white; /* White text for button */
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .main-content h1 {
+      font-size: 2rem;
+    }
+  
+    .main-content p {
+      font-size: 1rem;
+    }
+  
+    .feature-box {
+      padding: 20px;
+    }
+  
+    .feature-box h3 {
+      font-size: 1.3rem;
+    }
+  
+    .feature-box p {
+      font-size: 0.9rem;
+    }
+  
+    .btn-primary {
+      padding: 10px 20px;
+    }
+  }
+  

@@ -1,0 +1,40 @@
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+<div *ngIf="!errorMessage && vendor" class="vendor-details">
+  <h2>Vendor Profile</h2>
+
+  <div>
+    <label>Vendor ID:</label>
+    <span>{{ vendor.vendorId }}</span>
+  </div>
+
+  <div>
+    <label>Company Name:</label>
+    <span>{{ vendor.vendorCompanyName }}</span>
+  </div>
+
+  <div>
+    <label>Service Type:</label>
+    <span>{{ vendor.vendorServiceType }}</span>
+  </div>
+
+  <div>
+    <label>Vendor Name:</label>
+    <span>{{ vendor.vendorName }}</span>
+  </div>
+
+  <div>
+    <label>Phone:</label>
+    <span>{{ vendor.vendorPhone }}</span>
+  </div>
+
+  <div>
+    <label>Email:</label>
+    <span>{{ vendor.vendorEmail }}</span>
+  </div>
+
+  <div>
+    <label>Amount:</label>
+    <span>{{ vendor.vendorAmount | currency }}</span>
+  </div>
+</div>

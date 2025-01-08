@@ -1,0 +1,31 @@
+.view-events-container {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+.event-card {
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading-spinner {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.no-events-message {
+  text-align: center;
+  font-size: 1.5em;
+  color: #888;
+}

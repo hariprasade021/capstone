@@ -1,0 +1,43 @@
+<!-- Login Container -->
+<div class="d-flex justify-content-center align-items-center vh-100 bg-black">
+  <div class="card p-4 shadow-lg bg-dark text-white" style="width: 20rem;">
+    <h2 class="text-center mb-4">Login</h2>
+    <form  method="POST" [formGroup]="loginFormGroup" (ngSubmit)="submitLoginForm()">
+      <!-- Username Input -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" style="background-color: #333333; color: white;"  name="username" required formControlName="username" />
+        <p *ngIf="loginFormGroup.get('username')?.touched && loginFormGroup.get('username')?.invalid">Username is required</p>
+      </div>
+
+      <!-- Password Input -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" style="background-color: #333333; color: white;" name="password" required formControlName="password" />
+        <p *ngIf="loginFormGroup.get('password')?.touched && loginFormGroup.get('password')?.invalid">Passowrd is required</p>
+      </div>
+
+      <div class="mb-3">
+        <label for="role" class="form-label">Role</label>
+        <select class="form-control" id="role" name="role" formControlName="role" required  style="background-color: #333333; color: white;">
+          <option value="ADMIN">ADMIN</option>
+          <option value="USER">USER</option>
+          <option value="VENDOR">VENDOR</option>
+        </select>
+        <p *ngIf="loginFormGroup.get('role')?.touched && loginFormGroup.get('role')?.invalid">Role is required</p>
+      </div>
+
+
+      <!-- Login Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+
+      <!-- Sign Up Link -->
+      <div class="text-center mt-3">
+        <p>Don't have an account? <a [routerLink]="['/signup']" routerLinkActive="router-link-active" class="text-light">Sign up</a></p>
+      </div>
+
+    </form>
+  </div>
+</div>

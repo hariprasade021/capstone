@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2>Vendor List</h2>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="loading" class="text-center">
+      <p>Loading vendors...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+  </div>
+
+  <!-- Vendor Cards -->
+  <div class="row" *ngIf="!loading && vendors.length">
+      <div class="col-md-4 mb-4" *ngFor="let vendor of vendors">
+          <div class="card h-100">
+              <div class="card-body">
+                  <h5 class="card-title">{{ vendor.vendorCompanyName }}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{ vendor.vendorServiceType }}</h6>
+                  <p class="card-text">
+                      <strong>Name:</strong> {{ vendor.vendorName }}<br>
+                      <strong>Phone:</strong> {{ vendor.vendorPhone }}<br>
+                      <strong>Email:</strong> {{ vendor.vendorEmail }}<br>
+                      <strong>Amount:</strong> {{ vendor.vendorAmount | currency }}<br>
+                      <!-- <strong>Payment Status:</strong> {{ vendor.vendorPaymentStatus }} -->
+                  </p>
+              </div>
+              <!-- <div class="card-footer">
+                  <button class="btn btn-primary btn-sm">View Details</button>
+              </div> -->
+          </div>
+      </div>
+  </div>
+
+  <!-- No Vendors Found -->
+  <div *ngIf="!loading && vendors.length === 0" class="text-center">
+      <p>No vendors found.</p>
+  </div>
+</div>

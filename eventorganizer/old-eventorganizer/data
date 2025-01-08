@@ -1,0 +1,44 @@
+
+INSERT INTO event (title, date, location) VALUES
+('Wedding Ceremony', '2024-12-12', 'Taj Mahal Palace, Mumbai'),
+('Diwali Celebration', '2024-11-04', 'City Square Park'),
+('Holi Festival', '2025-03-10', 'Community Grounds'),
+('Ganesh Chaturthi', '2025-09-17', 'Ganesh Temple, Pune');
+
+
+INSERT INTO budget (estimated_expense, actual_expense, event_id) VALUES
+(100000.00, 95000.00, 1),  -- Wedding
+(15000.00, 14500.00, 2),   -- Diwali Celebration
+(10000.00, 9000.00, 3),    -- Holi Festival
+(20000.00, 21000.00, 4);   -- Ganesh Chaturthi
+
+
+INSERT INTO guest (name, email, rsvp_status, event_id) VALUES
+('Rajesh Sharma', 'rajesh.sharma@example.com', 'ATTENDING', 1),
+('Priya Singh', 'priya.singh@example.com', 'ATTENDING', 1),
+('Amit Patel', 'amit.patel@example.com', 'ATTENDING', 2),
+('Neha Agarwal', 'neha.agarwal@example.com', 'NOT_ATTENDING', 3),
+('Vikram Desai', 'vikram.desai@example.com', 'ATTENDING', 4);
+
+
+INSERT INTO feedback (comments, rating, event_id) VALUES
+('Beautiful decorations and great service!', 5, 1),  -- Wedding
+('Loved the lights and sweets!', 4, 2),              -- Diwali
+('Colors and music were amazing!', 5, 3),            -- Holi
+('Very well-organized and traditional.', 5, 4);      -- Ganesh Chaturthi
+
+
+INSERT INTO vendor (name, category, location, services) VALUES
+('Saffron Caterers', 'Catering', 'Mumbai', 'Indian Traditional Food'),
+('Event Lights Co.', 'Lighting', 'Mumbai', 'Event Lighting Services'),
+('Festival Decorators', 'Decor', 'Pune', 'Decorations for Festivals'),
+('Sound Solutions', 'Audio-Visual', 'Pune', 'Sound System and AV Equipment');
+
+
+INSERT INTO event_vendor (event_id, vendor_id) VALUES
+(1, 1),  -- Saffron Caterers for Wedding
+(1, 2),  -- Event Lights Co. for Wedding
+(2, 3),  -- Festival Decorators for Diwali Celebration
+(3, 4),  -- Sound Solutions for Holi Festival
+(4, 3);  -- Festival Decorators for Ganesh Chaturthi
+

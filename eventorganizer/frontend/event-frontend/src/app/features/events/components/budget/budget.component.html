@@ -1,0 +1,24 @@
+<div class="budget-container">
+  <div *ngIf="submittedEvent" class="budget-details">
+    <h2>Budget Details for {{ submittedEvent.title }}</h2>
+
+    <div class="budget-summary">
+      <div class="budget-card">
+        <h3>Estimated Expense</h3>
+        <p class="budget-amount">{{ submittedEvent.estimatedExpense | currency }}</p>
+      </div>
+      <div class="budget-card">
+        <h3>Actual Expense</h3>
+        <p class="budget-amount">{{ submittedEvent.actualExpense | currency }}</p>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="expenseChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+
+  <div *ngIf="!submittedEvent" class="no-event-selected">
+    <p>No event budget details available.</p>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="add-vendor-container">
+  <h2>Add Vendor</h2>
+  <form (ngSubmit)="onSubmit()" #vendorForm="ngForm">
+    <div class="form-group">
+      <label for="vendorCompanyName">Company Name</label>
+      <input
+        type="text"
+        id="vendorCompanyName"
+        [(ngModel)]="vendor.vendorCompanyName"
+        name="vendorCompanyName"
+        required
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="vendorServiceType">Service Type</label>
+      <input
+        type="text"
+        id="vendorServiceType"
+        [(ngModel)]="vendor.vendorServiceType"
+        name="vendorServiceType"
+        required
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="vendorName">Vendor Name</label>
+      <input
+        type="text"
+        id="vendorName"
+        [(ngModel)]="vendor.vendorName"
+        name="vendorName"
+        required
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="vendorPhone">Phone</label>
+      <input
+        type="tel"
+        id="vendorPhone"
+        [(ngModel)]="vendor.vendorPhone"
+        name="vendorPhone"
+        required
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="vendorEmail">Email</label>
+      <input
+        type="email"
+        id="vendorEmail"
+        [(ngModel)]="vendor.vendorEmail"
+        name="vendorEmail"
+        required
+        class="form-control"
+      />
+    </div>
+    <div class="form-group">
+      <label for="vendorAmount">Amount</label>
+      <input
+        type="number"
+        id="vendorAmount"
+        [(ngModel)]="vendor.vendorAmount"
+        name="vendorAmount"
+        required
+        class="form-control"
+      />
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="!vendorForm.valid">
+      Submit
+    </button>
+  </form>
+</div>

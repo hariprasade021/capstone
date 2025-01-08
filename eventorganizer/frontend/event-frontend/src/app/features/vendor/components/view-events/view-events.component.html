@@ -1,0 +1,27 @@
+<div class="view-events-container">
+  <h2>Accepted Events</h2>
+
+  <!-- Loading state -->
+  <ng-template #loading>
+    <div class="loading-spinner">
+      Loading accepted events...
+    </div>
+  </ng-template>
+
+  <!-- Displaying detailed event information -->
+  <div *ngIf="eventDetails$ | async as eventDetails; else noEvents">
+    <div *ngFor="let event of eventDetails" class="event-card">
+      <h3>{{ event.title }}</h3>
+      <p>Status: {{ event.status }}</p>
+      <p>Date: {{ event.startDate | date }}</p>
+      <p>Location: {{ event.location }}</p>
+    </div>
+  </div>
+
+  <!-- No events found message -->
+  <ng-template #noEvents>
+    <div class="no-events-message">
+      No accepted events found.
+    </div>
+  </ng-template>
+</div>

@@ -1,0 +1,58 @@
+.sidebar {
+  transition: all 0.3s ease;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+  padding: 10px 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-link:hover {
+  transform: scale(1.05);
+  background-color: #444;
+}
+
+.main-content {
+  transition: all 0.3s ease;
+  padding: 20px;
+  border-left: 1px solid #333;
+}
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.row {
+  flex: 1;
+}
+
+.main-content {
+  padding-top: 20px;
+}
+
+.row.mt-4 {
+  margin-top: 20px;
+}
+
+/* Footer styles */
+.row.footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+.app-dashboard-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}

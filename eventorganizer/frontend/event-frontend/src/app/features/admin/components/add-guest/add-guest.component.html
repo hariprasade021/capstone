@@ -1,0 +1,74 @@
+<div class="card mx-auto mt-5" style="max-width: 600px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+  <div class="card-header bg-primary text-white text-center">
+    <h5>Add Guest</h5>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="guestForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          id="name"
+          formControlName="name"
+          type="text"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': guestForm.get('name')?.invalid && guestForm.get('name')?.touched }"
+        />
+        <div *ngIf="guestForm.get('name')?.invalid && guestForm.get('name')?.touched" class="invalid-feedback">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': guestForm.get('email')?.invalid && guestForm.get('email')?.touched }"
+        />
+        <div *ngIf="guestForm.get('email')?.invalid && guestForm.get('email')?.touched" class="invalid-feedback">
+          Valid email is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="diet" class="form-label">Diet</label>
+        <select
+          id="diet"
+          formControlName="diet"
+          class="form-select"
+          [ngClass]="{ 'is-invalid': guestForm.get('diet')?.invalid && guestForm.get('diet')?.touched }"
+        >
+          <option *ngFor="let diet of dietOptions" [value]="diet">{{ diet }}</option>
+        </select>
+        <div *ngIf="guestForm.get('diet')?.invalid && guestForm.get('diet')?.touched" class="invalid-feedback">
+          Please select a diet preference.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="rsvpStatus" class="form-label">RSVP Status</label>
+        <select
+          id="rsvpStatus"
+          formControlName="rsvpStatus"
+          class="form-select"
+          [ngClass]="{ 'is-invalid': guestForm.get('rsvpStatus')?.invalid && guestForm.get('rsvpStatus')?.touched }"
+        >
+          <option *ngFor="let status of rsvpOptions" [value]="status">{{ status }}</option>
+        </select>
+        <div *ngIf="guestForm.get('rsvpStatus')?.invalid && guestForm.get('rsvpStatus')?.touched" class="invalid-feedback">
+          Please select an RSVP status.
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100" [disabled]="guestForm.invalid">Add Guest</button>
+    </form>
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

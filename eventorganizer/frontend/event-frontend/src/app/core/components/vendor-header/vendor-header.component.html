@@ -1,0 +1,23 @@
+<!-- navbar.component.html -->
+<nav>
+    <span class="navbar-brand" >Event Organizer</span>
+  
+    <div class="navbar-links">
+      <a class="nav-link" routerLink="/EventDashboard">Home</a>
+      <a class="nav-link" routerLink="/help">Help</a>
+  
+      <!-- User Dropdown -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+      <div class="nav-item dropdown">
+        <span class="nav-link dropdown-toggle" (click)="toggleDropdown()">
+          <i class="bi bi-person-fill" style="font-size: 1.8rem; color: #00bcd4;"></i>
+        </span>
+  
+        <div class="dropdown-menu" [ngClass]="{'show': dropdownOpen}">
+          <a class="dropdown-item" routerLink="vendor-profile">View Profile</a>
+          <a class="dropdown-item" routerLink="/logout" (click)="logout()">Logout</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

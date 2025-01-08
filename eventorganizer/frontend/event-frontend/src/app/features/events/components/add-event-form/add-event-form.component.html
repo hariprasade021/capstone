@@ -1,0 +1,133 @@
+<form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)" class="container mt-4">
+  <!-- <div class="form-group">
+    <label for="userId">User ID</label>
+    <input type="number" id="userId" [(ngModel)]="eventData.userId" name="userId" class="form-control" required />
+  </div> -->
+
+  <div class="form-group">
+    <label for="eventName">Event Name</label>
+    <input type="text" id="eventName" [(ngModel)]="eventData.name" name="name" class="form-control" required />
+  </div>
+
+  <div class="form-group">
+    <label for="eventTitle">Event Title</label>
+    <input type="text" id="eventTitle" [(ngModel)]="eventData.title" name="title" class="form-control" required />
+  </div>
+
+  <div class="form-group">
+    <label for="startDate">Start Date</label>
+    <input type="date" id="startDate" [(ngModel)]="eventData.startDate" name="startDate" class="form-control" required />
+  </div>
+
+  <div class="form-group">
+    <label for="estimatedExpense">Estimated Expense</label>
+    <input type="number" id="estimatedExpense" [(ngModel)]="eventData.estimatedExpense" name="estimatedExpense" class="form-control" />
+  </div>
+
+  <div class="form-group">
+    <label for="eventLocation">Event Location</label>
+    <input type="text" id="eventLocation" [(ngModel)]="eventData.location" name="location" class="form-control" required />
+  </div>
+
+  <div class="form-group">
+    <label for="eventType">Event Type</label>
+    <select id="eventType" [(ngModel)]="eventData.type" name="type" class="form-control" required>
+      <option value="CORPORATE">Corporate</option>
+      <option value="WEDDING">Wedding</option>
+      <option value="COMMUNITY_FESTIVAL">Community Festival</option>
+      <option value="BIRTHDAY">Birthday</option>
+      <option value="CONCERT">Concert</option>
+      <option value="SPORTS">Sports</option>
+      <option value="CHARITY">Charity</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="endDate">End Date</label>
+    <input type="date" id="endDate" [(ngModel)]="eventData.endDate" name="endDate" class="form-control" required />
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="actualExpense">Actual Expense</label>
+    <input type="number" id="actualExpense" [(ngModel)]="eventData.actualExpense" name="actualExpense" class="form-control" />
+  </div> -->
+
+  <div class="form-group">
+    <label for="eventDescription">Event Description</label>
+    <textarea id="eventDescription" [(ngModel)]="eventData.description" name="description" class="form-control" required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="eventStatus">Event Status</label>
+    <select id="eventStatus" [(ngModel)]="eventData.status" name="status" class="form-control" required>
+      <option value="COMPLETED">Completed</option>
+      <option value="IN_PROGRESS">In Progress</option>
+      <option value="PENDING">Pending</option>
+      <option value="CANCELLED">Cancelled</option>
+    </select>
+  </div>
+
+  <!-- <div class="form-group">
+    <label for="clientId">Client ID</label>
+    <input type="number" id="clientId" [(ngModel)]="eventData.clientId" name="clientId" class="form-control" required />
+  </div> -->
+
+  <!-- <div class="form-group">
+    <label for="vendors">Vendors</label>
+    <input type="text" id="vendors" [(ngModel)]="eventData.vendors" name="vendors" class="form-control" />
+  </div> -->
+
+  <div class="form-group">
+    <label for="vendors" class="form-label">Select Vendors</label>
+    <div *ngIf="loading" class="text-info">Loading vendors...</div>
+    <div *ngIf="error" class="text-danger">{{ error }}</div>
+    <div *ngIf="!loading && !error" class="vendor-container">
+      <div *ngFor="let vendor of vendors" class="vendor-card">
+        <label class="vendor-checkbox">
+          <input
+            type="checkbox"
+            [value]="vendor.id"
+            (change)="toggleVendor(vendor.id, $event)"
+          />
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="vendor-details">
+          <h5>{{ vendor.name }}</h5>
+          <p>Budget: {{ vendor.budget | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="form-group">
+    <label for="guests">Guests</label>
+    <input type="text" id="guests" [(ngModel)]="eventData.guests" name="guests" class="form-control" />
+  </div> -->
+
+  <div class="form-group">
+    <label for="guests" class="form-label">Select Guests</label>
+    <div *ngIf="loadingGuests" class="text-info">Loading guests...</div>
+    <div *ngIf="errorGuests" class="text-danger">{{ errorGuests }}</div>
+    <div *ngIf="!loadingGuests && !errorGuests" class="guest-container">
+      <div *ngFor="let guest of guests" class="guest-card">
+        <label class="guest-checkbox">
+          <input
+            type="checkbox"
+            [value]="guest.id"
+            (change)="toggleGuest(guest.id, $event)"
+          />
+          <span class="checkbox-custom"></span>
+        </label>
+        <div class="guest-details">
+          <h5>{{ guest.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary" [disabled]="!eventForm.valid">Submit</button>
+</form>
